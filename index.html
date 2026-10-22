@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a0d20" />
+  <meta name="description" content="A little corner of the internet made for Anny — love notes, games, flashcards, and a date-machine." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E" />
+  <title>for Anny ♥</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="particle-layer" id="particleLayer" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Back to the top">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <span>for Anny</span>
+    </a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#letter">letter</a>
+      <a href="#miss-you">miss-you meter</a>
+      <a href="#notes">notes</a>
+      <a href="#flashcards">flashcards</a>
+      <a href="#dates">date machine</a>
+    </nav>
+    <button class="love-pill" id="topLoveBtn" type="button" aria-label="Send love">
+      <span aria-hidden="true">♡</span>
+      <span class="love-pill-text">send love</span>
+      <span class="love-count" id="loveCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-blob blob-one" aria-hidden="true"></div>
+      <div class="hero-blob blob-two" aria-hidden="true"></div>
+      <div class="hero-blob blob-three" aria-hidden="true"></div>
+
+      <span class="drift-heart" style="--x: 8%; --s: 18px; --d: 17s; --delay: 0s;" aria-hidden="true">♥</span>
+      <span class="drift-heart" style="--x: 21%; --s: 11px; --d: 21s; --delay: 5s;" aria-hidden="true">♥</span>
+      <span class="drift-heart" style="--x: 43%; --s: 14px; --d: 19s; --delay: 9s;" aria-hidden="true">✦</span>
+      <span class="drift-heart" style="--x: 62%; --s: 22px; --d: 23s; --delay: 3s;" aria-hidden="true">♥</span>
+      <span class="drift-heart" style="--x: 79%; --s: 12px; --d: 16s; --delay: 11s;" aria-hidden="true">♥</span>
+      <span class="drift-heart" style="--x: 92%; --s: 15px; --d: 25s; --delay: 7s;" aria-hidden="true">✦</span>
+
+      <span class="float-word float-one" aria-hidden="true">come online</span>
+      <span class="float-word float-two" aria-hidden="true">you + me</span>
+      <span class="float-word float-three" aria-hidden="true">my favorite human</span>
+
+      <div class="hero-inner">
+        <div class="hero-copy-wrap">
+          <p class="hero-kicker"><span class="dot" aria-hidden="true"></span> an entire website for one person</p>
+          <div class="hero-title-block">
+            <span class="title-small">I miss</span>
+            <h1 class="hero-name">
+              <span class="name-text">ANNY</span>
+              <span class="name-heart" aria-hidden="true">♥</span>
+            </h1>
+            <span class="hero-script">like, a ridiculous amount.</span>
+          </div>
+          <p class="hero-copy">
+            A text felt way too small, so I made you a whole corner of the internet.
+            There are love notes, silly games, flashcards, and a machine that keeps trying
+            to steal you away for a day. Take your time. I’ll be right here.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#letter">open your letter <span aria-hidden="true">↓</span></a>
+            <button class="button button-ghost" id="heroKissBtn" type="button">send me a kiss <span aria-hidden="true">♥</span></button>
+          </div>
+          <p class="kiss-status" id="kissStatus" aria-live="polite">0 kisses sent. keep going.</p>
+        </div>
+
+        <aside class="hero-side" aria-label="A note from me">
+          <div class="hero-note">
+            <span class="tape" aria-hidden="true"></span>
+            <p class="note-small">urgent message:</p>
+            <p class="note-hand">come online fast.<br />i have a whole day of<br />thoughts to give you.</p>
+            <span class="note-sign">— yours, obviously</span>
+            <span class="note-heart" aria-hidden="true">♥</span>
+            <svg class="note-squiggle" viewBox="0 0 140 40" fill="none" aria-hidden="true">
+              <path d="M4 23c17-16 29 10 45-2s20-10 36 2 26 3 51-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="hero-sticker" aria-hidden="true">certified<br />down bad</div>
+        </aside>
+      </div>
+
+      <p class="scroll-cue"><span aria-hidden="true">↓</span> scroll for your surprise</p>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>come online</span><span class="marquee-star">✦</span>
+          <span>i miss you</span><span class="marquee-star">✦</span>
+          <span>anny, my favorite</span><span class="marquee-star">✦</span>
+          <span>come online</span><span class="marquee-star">✦</span>
+          <span>i miss you</span><span class="marquee-star">✦</span>
+          <span>anny, my favorite</span><span class="marquee-star">✦</span>
+        </div>
+        <div class="marquee-group">
+          <span>come online</span><span class="marquee-star">✦</span>
+          <span>i miss you</span><span class="marquee-star">✦</span>
+          <span>anny, my favorite</span><span class="marquee-star">✦</span>
+          <span>come online</span><span class="marquee-star">✦</span>
+          <span>i miss you</span><span class="marquee-star">✦</span>
+          <span>anny, my favorite</span><span class="marquee-star">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section letter-section" id="letter">
+      <div class="section-head reveal">
+        <span class="section-index">01 / a letter</span>
+        <p class="section-kicker">because a chat bubble wasn’t going to cover it</p>
+        <h2>Some things are too big<br /><em>for a text.</em></h2>
+      </div>
+
+      <div class="letter-layout">
+        <div class="envelope-stage reveal">
+          <button class="envelope" id="envelopeBtn" type="button" aria-expanded="false" aria-controls="letterReveal" aria-label="Open the letter for Anny">
+            <span class="envelope-body"></span>
+            <span class="envelope-note">for Anny ♥</span>
+            <span class="envelope-front"></span>
+            <span class="envelope-flap"></span>
+            <span class="envelope-seal">A</span>
+            <span class="envelope-tip" id="envelopeTip">tap to open</span>
+          </button>
+          <p class="envelope-caption">sealed with an embarrassing amount of love</p>
+        </div>
+
+        <div class="letter-teaser reveal">
+          <p class="teaser-script">inside this little website:</p>
+          <ul class="teaser-list">
+            <li><span>01</span> one very honest letter</li>
+            <li><span>02</span> a meter that cannot handle the truth</li>
+            <li><span>03</span> notes to come back to</li>
+            <li><span>04</span> flashcards about us</li>
+            <li><span>05</span> twelve ways to steal you for a day</li>
+            <li><span>06</span> one very important question</li>
+          </ul>
+          <p class="teaser-footnote">no rush. it’s all yours.</p>
+          <span class="teaser-heart" aria-hidden="true">♥</span>
+        </div>
+      </div>
+
+      <div class="letter-reveal" id="letterReveal" aria-hidden="true">
+        <div class="letter-inner">
+          <article class="love-letter">
+            <div class="letter-top">
+              <span>for my Anny</span>
+              <span>with all my love</span>
+            </div>
+            <p class="letter-salutation">my Anny,</p>
+            <p>
+              I miss you. Not in the dramatic, poetic way I’m about to pretend — in the very
+              real, very annoying way where I keep thinking of things to tell you and then
+              remember you’re not right here to hear them.
+            </p>
+            <p>
+              I miss your voice. I miss the way a normal conversation with you turns into
+              something I’m still thinking about hours later. I miss knowing what your day
+              sounds like. I miss the version of the day where you’re in it.
+            </p>
+            <p>
+              So I made this instead of just sitting here being dramatic about it. A letter,
+              some games, a few reminders, and a whole machine dedicated to stealing you away
+              for a day. It’s not the same as having you here. It’s just my way of saying
+              you’re on my mind more than a reasonable person should be.
+            </p>
+            <p>
+              You don’t have to do anything with any of this. Just know that you are missed.
+              Loudly. From wherever I am. Always.
+            </p>
+            <p class="letter-last">Now come online. Please. I have so much to say.</p>
+            <p class="letter-sign">all my love, always <span aria-hidden="true">♥</span></p>
+            <button class="fold-button" id="closeLetterBtn" type="button">fold this letter back up ↑</button>
+            <span class="letter-doodle" aria-hidden="true">xoxo</span>
+          </article>
+        </div>
+      </div>
+
+      <div class="open-when reveal">
+        <div class="open-when-head">
+          <p class="section-kicker">pocket-sized notes for later</p>
+          <h3>Open when<span class="script-accent">…</span></h3>
+        </div>
+        <div class="open-when-grid">
+          <button class="open-note" type="button" data-note="missme">
+            <span class="open-note-icon" aria-hidden="true">🌙</span>
+            <span class="open-note-label">when you miss me</span>
+            <span class="open-note-hint">tap to open</span>
+          </button>
+          <button class="open-note" type="button" data-note="overwhelmed">
+            <span class="open-note-icon" aria-hidden="true">🌿</span>
+            <span class="open-note-label">when everything is too loud</span>
+            <span class="open-note-hint">tap to open</span>
+          </button>
+          <button class="open-note" type="button" data-note="sleep">
+            <span class="open-note-icon" aria-hidden="true">☁️</span>
+            <span class="open-note-label">when you can’t sleep</span>
+            <span class="open-note-hint">tap to open</span>
+          </button>
+          <button class="open-note" type="button" data-note="laugh">
+            <span class="open-note-icon" aria-hidden="true">🫶</span>
+            <span class="open-note-label">when you need a laugh</span>
+            <span class="open-note-hint">tap to open</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="note-dialog" id="openWhenDialog" aria-labelledby="dialogTitle">
+      <div class="dialog-paper">
+        <button class="dialog-close" id="dialogCloseBtn" type="button" aria-label="Close note">×</button>
+        <span class="dialog-icon" id="dialogIcon" aria-hidden="true">🌙</span>
+        <p class="dialog-kicker">open when</p>
+        <h3 id="dialogTitle">you miss me</h3>
+        <p class="dialog-note" id="dialogNote"></p>
+        <p class="dialog-sign">— me, always</p>
+      </div>
+    </dialog>
+
+    <section class="section meter-section" id="miss-you">
+      <div class="section-head reveal">
+        <span class="section-index">02 / the miss-you meter</span>
+        <p class="section-kicker">warning: this has never been calibrated</p>
+        <h2>How much do I miss you?<br /><em>Let’s find out.</em></h2>
+      </div>
+
+      <div class="meter-stage reveal">
+        <span class="meter-label meter-label-one" aria-hidden="true">a little</span>
+        <span class="meter-label meter-label-two" aria-hidden="true">a lot</span>
+        <span class="meter-label meter-label-three" aria-hidden="true">send help</span>
+
+        <div class="meter" id="meter" style="--p: 0;">
+          <div class="meter-center">
+            <span class="meter-value" id="meterValue">0%</span>
+            <span class="meter-sub" id="meterSub">hold the button</span>
+          </div>
+        </div>
+
+        <div class="meter-controls">
+          <button class="hold-button" id="holdBtn" type="button">
+            <span class="hold-icon" aria-hidden="true">♥</span>
+            <span id="holdBtnText">press + hold</span>
+          </button>
+          <p class="meter-message" id="meterMessage">Go on. I dare you to measure it.</p>
+          <p class="meter-footnote">let go whenever. the answer won’t change.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notes-section" id="notes">
+      <div class="section-head reveal">
+        <span class="section-index">03 / love notes</span>
+        <p class="section-kicker">a tiny deck of things you should know</p>
+        <h2>Pick a note.<br /><em>Any note.</em></h2>
+      </div>
+
+      <div class="notes-stage reveal">
+        <div class="note-stack">
+          <div class="stack-card stack-back-one" aria-hidden="true"></div>
+          <div class="stack-card stack-back-two" aria-hidden="true"></div>
+          <article class="big-note" id="bigNote" aria-live="polite">
+            <div class="big-note-top">
+              <span id="noteCategory">a reminder</span>
+              <span id="noteIndex">01 / 08</span>
+            </div>
+            <p class="big-note-text" id="noteText"></p>
+            <div class="big-note-bottom">
+              <span>from me, to you</span>
+              <span class="big-note-heart" aria-hidden="true">♥</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="notes-controls">
+          <button class="round-button" id="prevNoteBtn" type="button" aria-label="Previous note">←</button>
+          <button class="shuffle-button" id="shuffleNoteBtn" type="button">shuffle the deck <span aria-hidden="true">✦</span></button>
+          <button class="round-button" id="nextNoteBtn" type="button" aria-label="Next note">→</button>
+        </div>
+        <p class="notes-hint">a new note every time you press →. no excuses.</p>
+      </div>
+    </section>
+
+    <section class="section cards-section" id="flashcards">
+      <div class="section-head reveal">
+        <span class="section-index">04 / flashcards</span>
+        <p class="section-kicker">things I’d tell you if you were sitting here</p>
+        <h2>Tap a card.<br /><em>Get a whole feeling.</em></h2>
+      </div>
+
+      <div class="flash-wrap reveal">
+        <div class="flash-meta">
+          <span id="flashProgressText">0 of 8 flipped</span>
+          <div class="progress-track" aria-hidden="true"><span id="flashProgressBar"></span></div>
+          <span class="flash-counter" id="flashCounter">01 / 08</span>
+        </div>
+
+        <button class="flashcard" id="flashcard" type="button" aria-pressed="false">
+          <div class="flash-inner">
+            <div class="flash-face flash-front" id="flashFront">
+              <span class="flash-kicker" id="flashKicker">card 01 / 08</span>
+              <span class="flash-question" id="flashQuestion"></span>
+              <span class="flash-tap">tap to flip <span aria-hidden="true">↻</span></span>
+              <span class="flash-big-heart" aria-hidden="true">♥</span>
+            </div>
+            <div class="flash-face flash-back" id="flashBack" aria-hidden="true">
+              <span class="flash-kicker">my answer</span>
+              <span class="flash-answer" id="flashAnswer"></span>
+              <span class="flash-tap">tap to flip back <span aria-hidden="true">↻</span></span>
+              <span class="flash-doodle" aria-hidden="true">always.</span>
+            </div>
+          </div>
+        </button>
+
+        <div class="flash-controls">
+          <button class="round-button" id="prevCardBtn" type="button">← back</button>
+          <span class="flash-tip">flip every card to unlock a secret note</span>
+          <button class="round-button" id="nextCardBtn" type="button">next card →</button>
+        </div>
+
+        <div class="secret-note" id="secretNote" aria-hidden="true" aria-live="polite">
+          <div class="secret-note-inner">
+            <span class="secret-label">✦ secret note unlocked ✦</span>
+            <p class="secret-text">
+              You found every answer. Here’s the one I was saving: I don’t need a perfect day,
+              a perfect plan, or a perfect version of us. I just want <em>you</em> — the ordinary,
+              ridiculous, lovely you. That’s the whole secret.
+            </p>
+            <span class="secret-sign">now come here. ♥</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dates-section" id="dates">
+      <div class="section-head reveal">
+        <span class="section-index">05 / the date machine</span>
+        <p class="section-kicker">twelve activity proposals, one very willing participant</p>
+        <h2>Spin us into<br /><em>something good.</em></h2>
+      </div>
+
+      <div class="date-machine reveal">
+        <div class="date-ticket" id="dateTicket">
+          <div class="ticket-stub">
+            <span class="ticket-label">admit two</span>
+            <span class="ticket-emoji" id="dateEmoji">🌙</span>
+            <span class="ticket-number" id="dateNumber">NO. 001</span>
+          </div>
+          <div class="ticket-main">
+            <span class="vibe-tag" id="dateVibe">cozy</span>
+            <h3 id="dateTitle"></h3>
+            <p class="ticket-desc" id="dateDesc"></p>
+            <p class="ticket-meta"><span id="dateTime"></span><span> · for two</span></p>
+            <button class="save-date-button" id="saveDateBtn" type="button" aria-pressed="false">
+              <span aria-hidden="true">+</span> save to our little plan
+            </button>
+          </div>
+          <span class="ticket-notch notch-top" aria-hidden="true"></span>
+          <span class="ticket-notch notch-bottom" aria-hidden="true"></span>
+        </div>
+
+        <div class="date-controls">
+          <p class="control-label">pick a mood, then spin</p>
+          <div class="mood-chips" role="group" aria-label="Choose a date mood">
+            <button class="mood-chip is-active" type="button" data-mood="any" aria-pressed="true">anything</button>
+            <button class="mood-chip" type="button" data-mood="cozy" aria-pressed="false">cozy</button>
+            <button class="mood-chip" type="button" data-mood="silly" aria-pressed="false">silly</button>
+            <button class="mood-chip" type="button" data-mood="outside" aria-pressed="false">outside</button>
+            <button class="mood-chip" type="button" data-mood="late-night" aria-pressed="false">late-night</button>
+          </div>
+          <button class="spin-button" id="spinDateBtn" type="button">
+            <span id="spinDateText">spin our next date</span>
+            <span class="spin-icon" aria-hidden="true">✦</span>
+          </button>
+          <p class="date-whisper" id="dateWhisper">the machine has taste. trust it.</p>
+        </div>
+      </div>
+
+      <div class="plan-box reveal">
+        <div class="plan-heading">
+          <span class="section-kicker">the maybe list</span>
+          <h3>Our little plan</h3>
+        </div>
+        <p class="plan-empty" id="planEmpty">Spin something good and hit “save.” This list is for us.</p>
+        <ul class="saved-dates" id="savedDatesList" aria-label="Saved date ideas"></ul>
+      </div>
+    </section>
+
+    <section class="section ask-section" id="ask">
+      <div class="ask-card reveal">
+        <span class="ask-kicker">06 / the important bit</span>
+        <p class="ask-script">so, Anny…</p>
+        <h2>Will you go on<br />a date <em>with me?</em></h2>
+        <p class="ask-copy">
+          You pick the day. I’ll bring the snacks, the playlist, and the world’s worst jokes.
+          All you have to do is show up and be you.
+        </p>
+        <div class="ask-actions" id="askActions">
+          <button class="yes-button" id="yesBtn" type="button">yes, obviously <span aria-hidden="true">♥</span></button>
+          <button class="dodge-button" id="dodgeBtn" type="button">let me think…</button>
+        </div>
+        <div class="ask-result" id="askResult" aria-live="polite" hidden>
+          <p class="result-small">okay, it’s official.</p>
+          <p class="result-big">IT’S A DATE. <span aria-hidden="true">♥</span></p>
+          <p>I’ll be counting down. Now come online so we can make it real.</p>
+        </div>
+        <p class="ask-footnote">p.s. the “no” button is broken. tragic.</p>
+        <span class="ask-heart ask-heart-one" aria-hidden="true">♥</span>
+        <span class="ask-heart ask-heart-two" aria-hidden="true">♥</span>
+        <span class="ask-star" aria-hidden="true">✦</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-marquee" aria-hidden="true">
+      <div class="footer-marquee-track">
+        <span>i miss you</span><span>✦</span><span>come online</span><span>✦</span><span>i miss you</span><span>✦</span><span>come online</span><span>✦</span>
+        <span>i miss you</span><span>✦</span><span>come online</span><span>✦</span><span>i miss you</span><span>✦</span><span>come online</span><span>✦</span>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <a class="footer-brand" href="#top">for Anny <span aria-hidden="true">♥</span></a>
+      <p>Made with too much love, a questionable amount of code,<br />and one very specific person in mind.</p>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> · all my favorite days have you in them</span>
+        <a href="#top">back to the top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
